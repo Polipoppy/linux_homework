@@ -29,7 +29,20 @@ check_every_input()
 
 do_the_maths()
 {
-    echo "$1"
+    # echo -n "$1"
+    x=1
+    while [ $x -le $1 ]
+    do
+        y=1
+        # echo "$x"
+        while [ $y -le $2 ]
+        do
+            echo -n "$x*$y=`expr $x \* $y` "
+            y=`expr $y + 1`
+        done
+        echo ""
+        x=`expr $x + 1`
+    done
 }
 
 main() {
